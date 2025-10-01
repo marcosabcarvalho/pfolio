@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfólio — Cases com Impacto | Marcos A. B. de Carvalho</title>
+  <meta name="description" content="Portfólio focado em problemas, soluções e impacto (métricas) para o Hackathon TJBA." />
+  <meta name="author" content="Marcos A. B. de Carvalho" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Portfólio — Cases com Impacto | Marcos A. B. de Carvalho">
+  <meta property="og:description" content="Problema → Solução → Impacto (métricas).">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://marcosabcarvalho.github.io/pfolio/">
+  <meta property="og:image" content="assets/cover.png">
+
+  <link rel="icon" href="assets/favicon.png" type="image/png"/>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Marcos Antonio Bezerra de Carvalho",
+    "url":"https://marcosabcarvalho.github.io/pfolio/",
+    "jobTitle":"Analista de TI / Full-stack",
+    "alumniOf":{"@type":"CollegeOrUniversity","name":"UNEB"},
+    "sameAs":[
+      "https://github.com/marcosabcarvalho",
+      "https://www.linkedin.com/in/marcosabcarvalho"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="wrapper nav">
+      <a class="logo" href="#">MAB<span>.</span></a>
+      <button id="navToggle" aria-label="abrir menu" class="nav-toggle">☰</button>
+      <ul id="navMenu" class="nav-menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#cases">Cases</a></li>
+        <li><a href="#competencias">Competências</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#" id="btnPrint">PDF 1 pág.</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="inicio" class="hero hero--cases">
+    <div class="wrapper hero-grid">
+      <div class="hero-copy">
+        <h1>Portfólio de Impacto</h1>
+        <p class="lead">
+          Marcos A. B. de Carvalho — Full-stack (Angular • Spring Boot • Docker) e Maker (ESP32/Arduino).
+          Abaixo, cases do setor público e educacional no formato <b>Problema → Solução → Impacto</b>.
+        </p>
+        <div class="badges">
+          <span class="badge">Hackathon TJBA</span>
+          <span class="badge badge-alt">GovTech</span>
+          <span class="badge badge-alt">DevOps</span>
+        </div>
+        <div class="cta">
+          <a class="btn" href="#cases">Ver cases</a>
+          <a class="btn btn-ghost" href="#contato">Falar comigo</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="stat"><span class="stat-k">+10</span><span class="stat-label">anos em TI pública</span></div>
+        <div class="stat"><span class="stat-k">+25</span><span class="stat-label">projetos & POCs</span></div>
+        <div class="stat"><span class="stat-k">Docker</span><span class="stat-label">deploys reproducíveis</span></div>
+      </div>
+    </div>
+  </main>
+
+  <section id="cases" class="section">
+    <div class="wrapper">
+      <h2>Cases (Problema → Solução → Impacto)</h2>
+      <p class="section-lead">Seleção de casos com foco em resultado mensurável. Clique para expandir detalhes ou abrir repositório.</p>
+      <div id="casesGrid" class="grid"></div>
+      <div class="more">
+        <a class="btn btn-ghost" href="https://github.com/marcosabcarvalho" target="_blank" rel="noopener">Mais no GitHub →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="competencias" class="section alt">
+    <div class="wrapper">
+      <h2>Competências</h2>
+      <div class="skills-grid">
+        <div>
+          <h3>Back-end</h3>
+          <ul>
+            <li>Java • Spring Boot • JPA • Security</li>
+            <li>Python (APIs, automações)</li>
+            <li>REST • JWT • Webhook</li>
+            <li>PostgreSQL • MySQL</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Front-end</h3>
+          <ul>
+            <li>Angular • TypeScript</li>
+            <li>HTML5 • CSS (Flex/Grid)</li>
+            <li>A11y • Performance</li>
+          </ul>
+        </div>
+        <div>
+          <h3>DevOps</h3>
+          <ul>
+            <li>Docker • Compose • GitHub Actions</li>
+            <li>Nginx • TLS (Let's Encrypt)</li>
+            <li>Observabilidade básica</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Maker/IoT</h3>
+          <ul>
+            <li>ESP32/Arduino • I2S/Áudio</li>
+            <li>Visão computacional (POCs)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="section">
+    <div class="wrapper">
+      <h2>Sobre</h2>
+      <p>
+        Atuo com desenvolvimento full-stack no setor público, priorizando segurança, estabilidade e UX.
+        Experiência com Angular + Spring Boot, automações Python e pipelines Docker/Nginx com TLS.
+        Em projetos maker, integro ESP32/Arduino para educação e música.
+      </p>
+    </div>
+  </section>
+
+  <section id="contato" class="section alt">
+    <div class="wrapper">
+      <h2>Contato</h2>
+      <p>Para oportunidades e parcerias, entre em contato por e-mail ou redes.</p>
+      <div class="contact-cards">
+        <a class="card" href="mailto:contato@ideiasbits.com.br">
+          <strong>Email</strong><span>contato@ideiasbits.com.br</span>
+        </a>
+        <a class="card" href="https://github.com/marcosabcarvalho" target="_blank" rel="noopener">
+          <strong>GitHub</strong><span>github.com/marcosabcarvalho</span>
+        </a>
+        <a class="card" href="https://www.linkedin.com/in/marcosabcarvalho" target="_blank" rel="noopener">
+          <strong>LinkedIn</strong><span>linkedin.com/in/marcosabcarvalho</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer no-print">
+    <div class="wrapper">
+      <small>© <span id="year"></span> Marcos A. B. de Carvalho — Portfólio</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
