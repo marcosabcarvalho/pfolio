@@ -13,6 +13,10 @@ document.getElementById('btnPrint')?.addEventListener('click', (e) => {
 });
 
 // ===== Cases (Problema → Solução → Impacto) =====
+// Regras pedidas: todos os links apontam para o perfil do GitHub,
+// exceto Controle de Ponto, que aponta para https://app.trf1.jus.br/controleponto
+const GITHUB_PROFILE = "https://github.com/marcosabcarvalho";
+
 const cases = [
   {
     title: "Controle de Ponto — Setor Público",
@@ -25,7 +29,7 @@ const cases = [
       { k: "100%", label: "tráfego sob HTTPS" },
       { k: "CI/CD", label: "pipeline GitHub Actions" }
     ],
-    link: "https://github.com/marcosabcarvalho/controledeponto-frontend"
+    link: "https://app.trf1.jus.br/controleponto"
   },
   {
     title: "Reconhecimento Facial — Acesso Interno (POC)",
@@ -38,7 +42,7 @@ const cases = [
       { k: "1 cmd", label: "atualização remota do serviço" },
       { k: "Logs", label: "rastreamento/rollback simples" }
     ],
-    link: "https://github.com/marcosabcarvalho"
+    link: GITHUB_PROFILE
   },
   {
     title: "Sonotrig — EdTech (ESP32)",
@@ -51,7 +55,7 @@ const cases = [
       { k: "−40%", label: "tempo p/ fixar conceitos" },
       { k: "Open", label: "base reutilizável p/ escolas" }
     ],
-    link: "https://github.com/marcosabcarvalho"
+    link: GITHUB_PROFILE
   },
   {
     title: "PWA Rádio Retrô",
@@ -64,7 +68,7 @@ const cases = [
       { k: "↑", label: "retenção de sessão" },
       { k: "Cross", label: "desktop/mobile" }
     ],
-    link: "https://github.com/marcosabcarvalho/estacao-saudade"
+    link: GITHUB_PROFILE
   },
   {
     title: "Intercâmbio Virtual — Inglês",
@@ -77,20 +81,20 @@ const cases = [
       { k: "↑", label: "conversa contínua (flow)" },
       { k: "→", label: "transcrição p/ revisão" }
     ],
-    link: "https://github.com/marcosabcarvalho"
+    link: GITHUB_PROFILE
   },
   {
     title: "GeoCanudos — Cultura",
     context: "Flutter • Assets (fotos/vídeos) • Curadoria",
     tags: ["Flutter","Cultura","UX"],
     problema: "Acervo rico, porém desorganizado e sem contexto geográfico/histórico padronizado.",
-    solucao: "App com metadados simples (título, descrição, local, mídia) e fluxo de curadoria para evitar informações desencontradas.",
+    solucao: "App com metadados simples (título, descrição, local, média) e fluxo de curadoria para evitar informações desencontradas.",
     impacto: [
       { k: "Consist.", label: "narrativa visual/histórica" },
       { k: "↓ retrabalho", label: "edição/validação" },
       { k: "Share", label: "divulgação facilitada" }
     ],
-    link: "https://github.com/marcosabcarvalho"
+    link: GITHUB_PROFILE
   }
 ];
 

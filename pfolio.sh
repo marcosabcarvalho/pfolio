@@ -2,16 +2,16 @@
 set -euo pipefail
 
 ############################################
-# CONFIG — ajuste aqui conforme preferir
+# CONFIG — ajuste aqui se quiser
 ############################################
 PROJECT_DIR="pfolio"                     # nome da pasta/local do site
 GH_USER="marcosabcarvalho"               # seu usuário do GitHub
-EMAIL_PUBLICO="contato@ideiasbits.com.br"
-LINKEDIN_SLUG="marcosabcarvalho"         # apenas o slug, sem o /in/ (pode deixar igual)
+EMAIL_PUBLICO="marcosabcarvalho@yahoo.com"
+LINKEDIN_SLUG="marcosabcarvalho"         # slug do LinkedIn
 USE_CUSTOM_DOMAIN=true                   # true = criar arquivo CNAME
 CUSTOM_DOMAIN="pfolio.ideiasbits.com.br" # se for usar domínio próprio
 INIT_GIT=true                            # true = git init + primeiro commit
-CREATE_GITHUB_REMOTE=false               # true = criar remote local (você precisa já ter o repo criado no GitHub)
+CREATE_GITHUB_REMOTE=false               # true = setar remote (repo deve existir)
 GITHUB_REPO_NAME="pfolio"                # nome do repositório
 ############################################
 
@@ -319,6 +319,10 @@ document.getElementById('btnPrint')?.addEventListener('click', (e) => {
 });
 
 // ===== Cases (Problema → Solução → Impacto) =====
+// Regras pedidas: todos os links apontam para o perfil do GitHub,
+// exceto Controle de Ponto, que aponta para https://app.trf1.jus.br/controleponto
+const GITHUB_PROFILE = "https://github.com/marcosabcarvalho";
+
 const cases = [
   {
     title: "Controle de Ponto — Setor Público",
@@ -331,7 +335,7 @@ const cases = [
       { k: "100%", label: "tráfego sob HTTPS" },
       { k: "CI/CD", label: "pipeline GitHub Actions" }
     ],
-    link: "https://github.com/marcosabcarvalho/controledeponto-frontend"
+    link: "https://app.trf1.jus.br/controleponto"
   },
   {
     title: "Reconhecimento Facial — Acesso Interno (POC)",
@@ -344,7 +348,7 @@ const cases = [
       { k: "1 cmd", label: "atualização remota do serviço" },
       { k: "Logs", label: "rastreamento/rollback simples" }
     ],
-    link: "https://github.com/marcosabcarvalho"
+    link: GITHUB_PROFILE
   },
   {
     title: "Sonotrig — EdTech (ESP32)",
@@ -357,7 +361,7 @@ const cases = [
       { k: "−40%", label: "tempo p/ fixar conceitos" },
       { k: "Open", label: "base reutilizável p/ escolas" }
     ],
-    link: "https://github.com/marcosabcarvalho"
+    link: GITHUB_PROFILE
   },
   {
     title: "PWA Rádio Retrô",
@@ -370,7 +374,7 @@ const cases = [
       { k: "↑", label: "retenção de sessão" },
       { k: "Cross", label: "desktop/mobile" }
     ],
-    link: "https://github.com/marcosabcarvalho/estacao-saudade"
+    link: GITHUB_PROFILE
   },
   {
     title: "Intercâmbio Virtual — Inglês",
@@ -383,20 +387,20 @@ const cases = [
       { k: "↑", label: "conversa contínua (flow)" },
       { k: "→", label: "transcrição p/ revisão" }
     ],
-    link: "https://github.com/marcosabcarvalho"
+    link: GITHUB_PROFILE
   },
   {
     title: "GeoCanudos — Cultura",
     context: "Flutter • Assets (fotos/vídeos) • Curadoria",
     tags: ["Flutter","Cultura","UX"],
     problema: "Acervo rico, porém desorganizado e sem contexto geográfico/histórico padronizado.",
-    solucao: "App com metadados simples (título, descrição, local, mídia) e fluxo de curadoria para evitar informações desencontradas.",
+    solucao: "App com metadados simples (título, descrição, local, média) e fluxo de curadoria para evitar informações desencontradas.",
     impacto: [
       { k: "Consist.", label: "narrativa visual/histórica" },
       { k: "↓ retrabalho", label: "edição/validação" },
       { k: "Share", label: "divulgação facilitada" }
     ],
-    link: "https://github.com/marcosabcarvalho"
+    link: GITHUB_PROFILE
   }
 ];
 
@@ -450,9 +454,8 @@ if (grid) cases.forEach(c => grid.appendChild(makeCaseCard(c)));
 EOF
 
 ############################################
-# assets placeholders
+# assets placeholders (silencioso se não houver ImageMagick)
 ############################################
-# Coloca ícones/placeholder simples para não quebrar referências
 convert -size 512x512 canvas:"#0b0e12" "$PROJECT_DIR/assets/cover.png" 2>/dev/null || true
 convert -size 64x64   canvas:"#0b0e12" "$PROJECT_DIR/assets/favicon.png" 2>/dev/null || true
 
@@ -493,3 +496,4 @@ if [ "$USE_CUSTOM_DOMAIN" = true ]; then
   echo "  6) No Registro.br: crie um CNAME para ${CUSTOM_DOMAIN} → ${GH_USER}.github.io"
 fi
 echo "----------------------------------------"
+
